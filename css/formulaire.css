@@ -1,0 +1,58 @@
+form,input,textarea,button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#add-fichier {
+    margin-top : 2vh;
+    display : flex;
+    flex-direction: column;
+    width: 50vw;
+    justify-content: space-evenly;
+    background-color: rgba(104 111 147 / 8%);
+    border-radius: 10px;
+}
+
+#file {
+    align-self: center;
+    width: 11.25vw;
+    background-color: rgba(109, 94, 94, 0.5);
+}
+
+#desc {
+    align-self: center;
+    height: 15vh;
+    width: 45vw;
+    border-radius: 10px;
+}
+
+#previewimg {
+    display : flex;
+    max-height : 15vh;
+    max-width: 50vw;
+}
+
+#previewImageContainer {
+    display : flex;
+    justify-content: center;
+}
+
+#send {
+    all: unset;
+    cursor: pointer;
+    text-align: center;
+    transition: background 0.5s;
+    background : rgb(107, 87, 87);
+    align-self: center;
+    width : 11.25vw;
+}
+
+#send:hover {
+    transition-duration: 0.5s;
+    background : rgb(165, 120, 120);
+}
+
+#send:after {
+    background-color: rgb(72, 62, 62);
+}

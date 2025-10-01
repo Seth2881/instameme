@@ -1,0 +1,108 @@
+*{
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin : 0;
+    border-left : solid;
+    border-right : solid;
+    background-image : url(../image/background.jpg);
+    background-color: #000000;
+    background-attachment: fixed;
+}
+
+main {
+    display : flex;
+    margin-top : 16vh;
+    width: 90vw;
+    min-height: 50vh;
+    justify-content: space-evenly;
+    justify-self: center;
+}
+
+#menu {
+    top : 0;
+    left : 0;
+    border : solid;
+    background: #000000;
+    background: linear-gradient(193deg, rgba(0, 0, 0, 1) 0%, rgba(15, 13, 13, 1) 42%, rgba(36, 31, 31, 1) 62%, rgba(150, 146, 146, 1) 100%, rgba(135, 131, 131, 1) 12%);
+    width: 100vw;
+    height : 16vh;
+    display: flex;
+    border-width: 0;
+    position : fixed;
+    z-index: 100;
+    border-bottom: #000000;
+}
+
+.logoacceuil {
+    margin-left : 2vw;
+    position : left;
+}
+
+#logo {
+    margin-top : 20%;
+    border-radius: 10px;
+    height : 70%;
+}
+
+.logobouton:hover {
+    transition-duration: 0.5s;
+    
+}
+
+.logobouton {
+    height : 100%;
+    border-radius: 10px;
+}
+
+#search-button {
+    height : 50%;
+    border-radius: 10px;
+    align-self: center;
+}
+
+#site-search {
+    height : 50%;
+    width: 20vw;
+    border-radius: 10px;
+    align-self: center;
+}
+
+.barrenavacceuil:hover {
+    transition-duration: 0.5s;
+    color: rgb(161, 78, 78);
+}
+
+.barrenavacceuil {
+    transition: color 0.5s;
+    text-decoration: none;
+    color: rgb(237, 143, 143);
+    align-self: center;
+    z-index: 300;
+}
+
+nav {
+    margin-left : 2vw;
+    display: inline-flex;
+    align-self: center;
+    height : 50%;
+    width: 25vw;
+    border-radius: 10px;
+    border-width: 3px;
+    justify-content: space-evenly;
+    z-index : 200;
+}
+
+.help {
+    margin-left : 2vw;
+    display: inline-flex;
+    align-self: center;
+    height : 50%;
+    width: 25vw;
+    border-radius: 10px;
+    border-width: 3px;
+    justify-content: space-evenly;
+    z-index : 200;
+}
