@@ -60,6 +60,9 @@
 .username {
     margin-left: 1vw;
     font-size: medium;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 .contenu {
     background-color: rgba(68, 68, 68,0.5);
@@ -71,6 +74,7 @@
     border-color: BLACK;
     border-width: 10px;
     height: 5vh;
+    margin-right: 1vw;
 }
 
 .header-post {

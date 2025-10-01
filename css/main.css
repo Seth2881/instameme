@@ -55,12 +55,15 @@ main {
 .logobouton {
     height : 100%;
     border-radius: 10px;
+    z-index: 1000;
 }
 
 #search-button {
     height : 50%;
     border-radius: 10px;
+    cursor: pointer;
     align-self: center;
+    z-index: 999;
 }
 
 #site-search {
@@ -105,4 +108,8 @@ nav {
     border-width: 3px;
     justify-content: space-evenly;
     z-index : 200;
+}
+
+hr {
+    color: black;
 }

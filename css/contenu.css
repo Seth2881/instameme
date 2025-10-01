@@ -2,7 +2,7 @@ a {
     all: unset;
 }
 
-button {
+.unset {
     all: unset;
 }
 
@@ -12,12 +12,20 @@ button {
     border-radius: 10px;
 }
 
+.username {
+    display : flex;
+    align-items: center;
+}
+
 .bonjour-romain {
     background-color: rgba(100, 98, 98, 0.5);
+    border-radius : 10px;
+    width: 40vw;
 }
 
 .post-image {
-    border-radius : 5%
+    border-radius : 5%;
+    height: 50vh;
 }
 
 .pfp {
@@ -40,7 +48,6 @@ button {
     margin-top : 1vh;
     margin-left: 1vw;
     display : flex;
-    align-items: center;
 }
 
 .description {
@@ -115,8 +122,4 @@ button {
 .commenter {
     z-index: 1;
     height : 25%;
-}
-
-.tu-crois-cest-chatgpt-hein{
-    margin-left: 1vw;
 }
