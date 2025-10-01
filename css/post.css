@@ -43,10 +43,11 @@
 
 .inputcom {
     all: unset;
-    height: 5vh;
+    height: 7vh;
     width: 20vw;
     border-radius : 0 0 10px 10px;
     background-color: rgba(41 41 41 / 50%);
+    margin: 0;
 }
 
 .showaime,.username,.description{
@@ -73,4 +74,8 @@
     flex-direction: row;
     align-items: center;
     margin: 1vh 0 1vh 10px;
+}
+
+.pseudolien {
+    all : unset;
 }
