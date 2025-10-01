@@ -60,3 +60,17 @@
 .contenu {
     background-color: rgba(68, 68, 68,0.5);
 }
+
+.pfp {
+    border-radius: 50%;
+    border-color: BLACK;
+    border-width: 10px;
+    height: 5vh;
+}
+
+.header-post {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 1vh 0 1vh 10px;
+}
