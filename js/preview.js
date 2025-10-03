@@ -1,7 +1,7 @@
 function previewImage() {
   const fileInput = document.getElementById('file'); // doit correspondre à l'id dans le HTML
   const imagePreviewContainer = document.getElementById('previewImageContainer');
-
+ 
   if (!fileInput || !imagePreviewContainer) {
     console.error('Élément manquant : vérifie les IDs "file" et "previewImageContainer".');
     return;

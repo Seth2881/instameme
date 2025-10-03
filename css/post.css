@@ -25,7 +25,6 @@
 }
 
 .like-partage {
-    filter: brightness(0) saturate(100%);
     margin-top : 5px;
     margin-left : 5px;
     width: 2vw;
@@ -119,4 +118,10 @@ a {
 .commenter {
     z-index: 1;
     height : 25%;
+}
+
+.boutons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }

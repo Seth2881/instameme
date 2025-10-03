@@ -30,6 +30,8 @@ main {
     width: 100vw;
     height : 16vh;
     display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
     border-width: 0;
     position : fixed;
     z-index: 100;
@@ -37,14 +39,12 @@ main {
 }
 
 .logoacceuil {
-    margin-left : 2vw;
-    position : left;
+    justify-self: flex-start;
 }
 
 #logo {
-    margin-top : 20%;
+    height : 10vh;
     border-radius: 10px;
-    height : 70%;
 }
 
 .logobouton:hover {
@@ -88,7 +88,7 @@ main {
 
 nav {
     margin-left : 2vw;
-    display: inline-flex;
+    display: flex;
     align-self: center;
     height : 50%;
     width: 25vw;
@@ -100,7 +100,7 @@ nav {
 
 .help {
     margin-left : 2vw;
-    display: inline-flex;
+    display: flex;
     align-self: center;
     height : 50%;
     width: 25vw;
@@ -111,5 +111,29 @@ nav {
 }
 
 hr {
-    color: black;
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(to right, #000000, #4e4c4c, #000000);
+}
+
+.lienacceuil {
+    transition: color 0.5s;
+    text-decoration: none;
+    color: rgb(237, 143, 143);
+    align-self: center;
+    z-index: 300;
+    margin-left: 1vw;
+}
+
+.lienacceuil:hover {
+    transition-duration: 0.5s;
+    color: rgb(161, 78, 78);
+}
+
+.lien-gauche {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
 }
