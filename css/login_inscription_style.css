@@ -1,0 +1,70 @@
+.formulaire{
+    display : flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#form-inscription,
+#form-login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    gap: 2vh;
+
+    width: 30vw;
+    padding: 2vh;
+    margin: 0;
+
+    background: rgba(30, 30, 30, 0.9); /* légèrement plus clair et semi-transparent */
+    border-radius: 10px 10px 0 0;
+}
+
+
+label {
+    font-weight: bold;
+    color: #f9f5ee; /* crème clair */
+}
+
+input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #2c2a2a; /* fond des champs sombre */
+    color: #f9f5ee; /* texte clair */
+}
+
+input::placeholder {
+    color: #aaa; /* placeholder légèrement gris */
+}
+
+button {
+    padding: 10px;
+    background: #d9534f; /* rouge doux */
+    color: #f9f5ee; /* texte clair */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #c0392b; /* rouge plus foncé au hover */
+}
+
+.signup-link {
+    padding-left: 1vw;
+    padding-bottom: 2vh;
+    display: flex;
+    text-align: center;
+    border-radius: 0 0 10px 10px;
+    background-color: #1e1c1c; /* même fond que le formulaire */
+    color: #f9f5ee; /* texte clair */
+    cursor: pointer;
+    transition: color 0.3s;
+    justify-content: center;
+}
+
+.signup-link:hover {
+    color: #ffffff; /* s'éclaircit au survol */
+}
