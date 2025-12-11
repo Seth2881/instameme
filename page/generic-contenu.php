@@ -1,5 +1,12 @@
 <?php require_once '../php/session_check.php' ?>
-<?php require_once '../php/connection_bdd.php' ?>
+<?php
+require_once '../php/connection_bdd.php';
+
+header("Cache-Control: no-cache, must-revalidate");
+header("Pragma: no-cache");
+header("Expires: 0");
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -9,8 +16,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/contenu.css">
+    <link rel="stylesheet" href="../css/main.css?v=<?= time() ?>">
+    <link rel="stylesheet" href="../css/contenu.css?v=<?= time() ?>">
 
     <title>InstaGreek | generic-content</title>
 </head>
@@ -24,10 +31,10 @@
                 <h3>Acceuil</h3>
             </a>
         </div>
-        <div class="help">
+        <form class="help" action="../php/search.php" method="post">
             <input type="search" id="site-search" name="q" maxlength="30" placeholder="search profiles/posts/ . . ." />
             <button id="search-button"><img class="logobouton" src="../image/searchlogo.png"></button>
-        </div>
+        </form>
         <nav>
             <a class="barrenavacceuil" href="add-contenu.php">
                 <h3>Créer</h3>
@@ -61,7 +68,7 @@
             "<div class=\"bonjour-romain\">" .
 
             "<div class=\"userinfo\">" .
-            "<a href=\"generic-user.php?pseudo=".$contenu['pseudo']."\" class=\"username\">" .
+            "<a href=\"generic-user.php?pseudo=" . $contenu['pseudo'] . "\" class=\"username\">" .
             "<img class=\"pfp\" src=\"../image/pfp-ulysse.jpg\" alt=\"photo-profil\">" .
             "<strong>" . $contenu['pseudo'] . "</strong>" .
             "</a>" .
@@ -73,9 +80,9 @@
             "<br>" .
             "<p>" .
             "<div class=\"like-partage-disposition\">" .
-            "<button class=\"unset\" class=\"button-like\">" .
+            "<a href=\"../php/add_like.php?id_post=" . $contenu['id'] . "\" class=\"unset\" class=\"button-like\">" .
             "<img class=\"like-partage\" src=\"../image/like-vide.png\" alt=\"like-partage\">" .
-            "</button>" .
+            "</a>" .
             "<a href=\"add-contenu.php\" class=\"button-partage\">" .
             "<img class=\"like-partage\" src=\"../image/partage.png\" alt=\"like-partage\">" .
             "</a>" .
@@ -102,12 +109,12 @@
 
 
         $final .= "<hr>" .
-            "<div class=\"formulaire\">" .
+            "<form action=\"../php/post_comment.php?post_id=".$post_id."\" method=\"post\" class=\"formulaire\">" .
             "<textarea class=\"inputcom\" name=\"commente\" id=\"sendcommentaire\" placeholder=\"Qu'en pense tu ? donne ton avis !\"></textarea>" .
-            "<button class=\"send\">" .
+            "<button type=\"submit\" class=\"send\">" .
             "<img class=\"commenter\" src=\"../image/commenter.png\" alt=\"commenter\">" .
             "</button>" .
-            "</div>" .
+            "</form>" .
 
             "</div>" .
             "</div>" .
@@ -115,7 +122,7 @@
 
 
         echo $final
-        ?>
+            ?>
 
     </main>
 </body>

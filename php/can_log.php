@@ -6,7 +6,9 @@ $good_password = False;
 $usrname = htmlspecialchars($_POST["name"]);
 $password = md5(htmlspecialchars($_POST["password"]));
 
-if ($isConnected) {
+$old_time = $_POST['time'];
+
+if ($isConnected && time()-$old_time > 1) {
     $stmt = $mysqlConnection->prepare("SELECT id,pseudo FROM utilisateurs");
     $stmt->execute();
     $list_username = $stmt->fetchAll();
@@ -29,9 +31,12 @@ if ($isConnected) {
             $_SESSION['id'] = $id;
             $_SESSION['role'] = 'user';
             header('Location: ../logged-in.php');
+            exit;
         } else {
             header('Location: ../index.php');
+            exit;
         }
     }
 }
+header('Location: ../index.php')
 ?>

@@ -8,8 +8,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/login_inscription_style.css">
+    <link rel="stylesheet" href="css/main.css?v=<?= time() ?>">
+    <link rel="stylesheet" href="css/login_inscription_style.css?v=<?= time() ?>">
 
     <title>InstaGreek | Login</title>
 </head>
@@ -26,6 +26,7 @@
     <main>
     <div class="formulaire">
         <form id="form-login" action="php/can_log.php" method="post">
+            <input type="hidden" name="time" value="<?= time() ?>">
             <label for="name-login">Pseudo</label>
             <input name="name" id="name-login" type="text" required />
 

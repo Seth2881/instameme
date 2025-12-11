@@ -1,4 +1,11 @@
-<?php require_once 'php/session_check.php' ?>
+<?php
+require_once 'php/session_check.php';
+
+header("Cache-Control: no-cache, must-revalidate");
+header("Pragma: no-cache");
+header("Expires: 0");
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,8 +15,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/post.css">
+    <link rel="stylesheet" href="./css/main.css?v=<?= time() ?>">
+    <link rel="stylesheet" href="./css/post.css?v=<?= time() ?>">
 
     <title>InstaGreek | Acceuil</title>
     <!--InstaGreek, le nouveau réseau social pour grec ancien-->
@@ -24,10 +31,10 @@
                 <h3>Acceuil</h3>
             </a>
         </div>
-        <div class="help">
+        <form class="help" action="php/search.php" method="post">
             <input type="search" id="site-search" name="q" maxlength="30" placeholder="search profiles/posts/ . . ." />
-            <button id="search-button"><img class="logobouton" src="image/searchlogo.png"></button>
-        </div>
+            <button id="search-button"><img class="logobouton" src="../image/searchlogo.png"></button>
+        </form>
         <nav>
             <a class="barrenavacceuil" href="page/add-contenu.php">
                 <h3>Créer</h3>
@@ -43,10 +50,9 @@
 
     <main id="main-page">
 
-    <?php require_once 'php/content_loading.php' ?>
+        <?php require_once 'php/content_loading.php' ?>
 
     </main>
-    <script src="js/heart-change.js"></script>
 </body>
 
 </html>

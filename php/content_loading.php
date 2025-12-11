@@ -14,6 +14,8 @@ if ($isConnected) {
     $stmt->execute();
     $list_contenu = $stmt->fetchAll();
 
+    shuffle($list_contenu);
+
     for ($i=0 ; $i < count($list_contenu);$i++) {
         $compteur = $i % 3; // cycle sur 3 colonnes
 
@@ -27,9 +29,9 @@ if ($isConnected) {
         . "<img class=\"post-image\" src=\"images-post/".$list_contenu[$i][3]."\" alt=\"".$list_contenu[$i][3]."\">"
         . "</a>"
         . "<div class=\"contenu\">"
-        . "<button class=\"button-like-partage\">"
+        . "<a href=\"php/add_like.php?id_post=".$list_contenu[$i][1]."\" class=\"button-like-partage\">"
         . "<img class=\"like1 like-partage\" src=\"image/like-vide.png\" alt=\"like-partage\">"
-        . "</button>"
+        . "</a>"
         . "<a href=\"page/add-contenu.php\" class=\"button-like-partage\">"
         . "<img class=\"like-partage\" src=\"image/partage.png\" alt=\"like-partage\">"
         . "</a>"
@@ -56,10 +58,10 @@ if ($isConnected) {
     }
 
     $cols[$compteur][count($cols[$compteur])-1] .= "<hr>"
-        . "<div class=\"formulaire\">"
+        . "<form action=\"php/post_comment.php?post_id=".$post_id."\" method=\"post\" class=\"formulaire\">"
         . "<textarea class=\"inputcom\" name=\"commente\" id=\"sendcommentaire\" placeholder=\"Qu'en pense tu ? donne ton avis !\"></textarea>"
-        . "<button class=\"send\"><img class=\"commenter\" src=\"image/commenter.png\" alt=\"commenter\"></button>"
-        . "</div>"
+        . "<button type=\"submit\" class=\"send\"><img class=\"commenter\" src=\"image/commenter.png\" alt=\"commenter\"></button>"
+        . "</form>"
         . "</div>"
         . "</li>";
     }

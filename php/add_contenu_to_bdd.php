@@ -4,7 +4,7 @@
 
 <?php
 $id = $_SESSION['id'];
-$desc = htmlspecialchars($_POST['description']);
+$desc = htmlspecialchars($_POST['description']) ?? '';
 
 if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
     $fileTmpPath = $_FILES['image']['tmp_name'];
@@ -19,13 +19,16 @@ if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
 
     // Déplacer le fichier vers un dossier sur le serveur
     $uploadFileDir = '../images-post/';
-    $dest_path = $uploadFileDir . $newFileName;}
+    $dest_path = $uploadFileDir . $newFileName;
+}
 
-if ($isConnected) {
-    $stmt = $mysqlConnection->prepare("INSERT INTO contenus (id_utilisateur, description, chemin_image, date_publication) 
+if (move_uploaded_file($fileTmpPath, $uploadFileDir . $dest_path)) {
+
+    if ($isConnected) {
+        $stmt = $mysqlConnection->prepare("INSERT INTO contenus (id_utilisateur, description, chemin_image, date_publication) 
     VALUES (?, ?, ?, NOW())");
-    $stmt->execute([$id,$desc,$newFileName]);
-    header('Location: ../logged-in.php');
-
+        $stmt->execute([$id, $desc, $newFileName]);
+        header('Location: ../logged-in.php');
+    }
 }
 ?>

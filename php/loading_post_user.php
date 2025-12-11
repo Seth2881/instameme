@@ -1,10 +1,6 @@
-<?php require_once 'session_check.php' ?>
-
 <?php require_once 'connection_bdd.php' ?>
 
 <?php
-$username = $_GET['pseudo'] ?? $_SESSION['pseudo'];
-
 
 $cols = [[],[],[],[]];
 $compteur = -1;
@@ -27,9 +23,9 @@ if ($isConnected) {
         . "<img class=\"post-image\" src=\"../images-post/".$list_contenu[$i][2]."\" alt=\"".$list_contenu[$i][2]."\">"
         . "</a>"
         . "<div class=\"contenu\">"
-        . "<button class=\"button-like-partage\">"
+        . "<a href=\"../php/add_like.php?id_post=".$list_contenu[$i][0]."\" class=\"button-like-partage\">"
         . "<img class=\"like1 like-partage\" src=\"../image/like-vide.png\" alt=\"like-partage\">"
-        . "</button>"
+        . "</a>"
         . "<a href=\"add-contenu.php\" class=\"button-like-partage\">"
         . "<img class=\"like-partage\" src=\"../image/partage.png\" alt=\"like-partage\">"
         . "</a>"
@@ -56,10 +52,10 @@ if ($isConnected) {
     }
 
     $cols[$compteur][count($cols[$compteur])-1] .= "<hr>"
-        . "<div class=\"formulaire\">"
+        . "<form action=\"../php/post_comment.php?post_id=".$post_id."\" method=\"post\" class=\"formulaire\">"
         . "<textarea class=\"inputcom\" name=\"commente\" id=\"sendcommentaire\" placeholder=\"Qu'en pense tu ? donne ton avis !\"></textarea>"
-        . "<button class=\"send\"><img class=\"commenter\" src=\"../image/commenter.png\" alt=\"commenter\"></button>"
-        . "</div>"
+        . "<button type=\"submit\" class=\"send\"><img class=\"commenter\" src=\"../image/commenter.png\" alt=\"commenter\"></button>"
+        . "</form>"
         . "</div>"
         . "</li>";
     }
