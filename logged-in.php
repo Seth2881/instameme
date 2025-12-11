@@ -28,7 +28,7 @@ header("Expires: 0");
             <a class="logoacceuil" href="logged-in.php"><img id="logo" src="image/logo.png"
                     alt="logo de l'application"></a>
             <a class="lienacceuil" href="logged-in.php">
-                <h3>Acceuil</h3>
+                <h3>Accueil</h3>
             </a>
         </div>
         <form class="help" action="php/search.php" method="post">
@@ -53,6 +53,33 @@ header("Expires: 0");
         <?php require_once 'php/content_loading.php' ?>
 
     </main>
+    <footer>
+        <?php if ($total_pages > 1): ?>
+            <div class="pagination-container">
+                <?php if ($page > 1): ?>
+                    <a href="?page=<?= $page - 1 ?>" class="pagination-btn">
+                        ← Précédent
+                    </a>
+                <?php endif; ?>
+
+                <?php for ($i = 1; $i <= $total_pages; $i++): ?>
+                    <?php if ($i == $page): ?>
+                        <span class="pagination-current"><?= $i ?></span>
+                    <?php else: ?>
+                        <a href="?page=<?= $i ?>" class="pagination-link">
+                            <?= $i ?>
+                        </a>
+                    <?php endif; ?>
+                <?php endfor; ?>
+
+                <?php if ($page < $total_pages): ?>
+                    <a href="?page=<?= $page + 1 ?>" class="pagination-btn">
+                        Suivant →
+                    </a>
+                <?php endif; ?>
+            </div>
+        <?php endif; ?>
+    </footer>
 </body>
 
 </html>

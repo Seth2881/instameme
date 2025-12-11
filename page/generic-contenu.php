@@ -28,7 +28,7 @@ header("Expires: 0");
             <a class="logoacceuil" href="../logged-in.php"><img id="logo" src="../image/logo.png"
                     alt="logo de l'application"></a>
             <a class="lienacceuil" href="../logged-in.php">
-                <h3>Acceuil</h3>
+                <h3>Accueil</h3>
             </a>
         </div>
         <form class="help" action="../php/search.php" method="post">
@@ -83,7 +83,7 @@ header("Expires: 0");
             "<a href=\"../php/add_like.php?id_post=" . $contenu['id'] . "\" class=\"unset\" class=\"button-like\">" .
             "<img class=\"like-partage\" src=\"../image/like-vide.png\" alt=\"like-partage\">" .
             "</a>" .
-            "<a href=\"add-contenu.php\" class=\"button-partage\">" .
+            "<a href=\"partage.php?id=".$contenu['id']."\" class=\"button-partage\">" .
             "<img class=\"like-partage\" src=\"../image/partage.png\" alt=\"like-partage\">" .
             "</a>" .
             "</div>" .

@@ -26,7 +26,7 @@ if ($isConnected) {
         . "<a href=\"../php/add_like.php?id_post=".$list_contenu[$i][0]."\" class=\"button-like-partage\">"
         . "<img class=\"like1 like-partage\" src=\"../image/like-vide.png\" alt=\"like-partage\">"
         . "</a>"
-        . "<a href=\"add-contenu.php\" class=\"button-like-partage\">"
+        . "<a href=\"../page/partage.php?id=".$list_contenu[$i][0]."\" class=\"button-like-partage\">"
         . "<img class=\"like-partage\" src=\"../image/partage.png\" alt=\"like-partage\">"
         . "</a>"
         . "<hr>"

@@ -19,7 +19,7 @@
             <a class="logoacceuil" href="../logged-in.php"><img id="logo" src="../image/logo.png"
                     alt="logo de l'application"></a>
             <a class="lienacceuil" href="../logged-in.php">
-                <h3>Acceuil</h3>
+                <h3>Accueil</h3>
             </a>
         </div>
         <form class="help" action="../php/search.php" method="post">

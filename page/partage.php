@@ -1,13 +1,4 @@
-<?php
-require_once '../php/session_check.php';
-
-header("Cache-Control: no-cache, must-revalidate");
-header("Pragma: no-cache");
-header("Expires: 0");
-
-$username= $_GET['pseudo'] ?? $_SESSION['pseudo'];
-?>
-
+<?php require_once '../php/session_check.php' ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,10 +7,10 @@ $username= $_GET['pseudo'] ?? $_SESSION['pseudo'];
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/post.css">
+    <link rel="stylesheet" href="../css/main.css?v=<?= time() ?>">
+    <link rel="stylesheet" href="../css/formulaire.css?v=<?= time() ?>">
 
-    <title>InstaGreek | Profil</title>
+    <title>InstaGreek | Créer</title>
 </head>
 
 <body>
@@ -47,11 +38,17 @@ $username= $_GET['pseudo'] ?? $_SESSION['pseudo'];
             </a>
         </nav>
     </header>
-
     <main>
+        <form enctype="multipart/form-data" action="../php/partage_contenu.php" id="add-fichier" method="post">
 
-        <?php require_once '../php/loading_post_user.php'; ?>
+            <input type="hidden" name="id_contenu" value=<?php echo "'".$_GET['id']."'"?>  required/>
 
+            <div id="previewImageContainer"></div>
+
+            <textarea name="description" placeholder="dites-nous tout sur cette publication !" id="desc"></textarea>
+            <button type="submit" onclick="alert('contenu partagé')" id="send">publier</button>
+
+        </form>
     </main>
 </body>
 

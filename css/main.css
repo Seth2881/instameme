@@ -1,20 +1,21 @@
-*{
+/* main.css - Version améliorée */
+* {
     box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    margin : 0;
-    border-left : solid;
-    border-right : solid;
-    background-image : url(../image/background.jpg);
+    font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+    margin: 0;
+    border-left: solid;
+    border-right: solid;
+    background-image: url(../image/background.jpg);
     background-color: #000000;
     background-attachment: fixed;
 }
 
 main {
-    display : flex;
-    margin-top : 16vh;
+    display: flex;
+    margin-top: 16vh;
     width: 90vw;
     min-height: 50vh;
     justify-content: space-evenly;
@@ -22,113 +23,145 @@ main {
 }
 
 #menu {
-    top : 0;
-    left : 0;
-    border : solid;
-    background: #000000;
-    background: linear-gradient(193deg, rgba(0, 0, 0, 1) 0%, rgba(15, 13, 13, 1) 42%, rgba(36, 31, 31, 1) 62%, rgba(150, 146, 146, 1) 100%, rgba(135, 131, 131, 1) 12%);
+    top: 0;
+    left: 0;
+    border: solid;
+    background: linear-gradient(193deg, 
+        rgba(0, 0, 0, 1) 0%, 
+        rgba(15, 13, 13, 1) 42%, 
+        rgba(36, 31, 31, 1) 62%, 
+        rgba(70, 68, 68, 1) 100%);
     width: 100vw;
-    height : 16vh;
+    height: 16vh;
     display: flex;
     justify-content: space-evenly;
     flex-direction: row;
     border-width: 0;
-    position : fixed;
+    position: fixed;
     z-index: 100;
-    border-bottom: #000000;
+    border-bottom: 2px solid rgba(139, 92, 246, 0.3);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
 .logoacceuil {
     justify-self: flex-start;
+    transition: transform 0.3s ease;
+}
+
+.logoacceuil:hover {
+    transform: scale(1.05);
 }
 
 #logo {
-    height : 10vh;
+    height: 10vh;
     border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(139, 92, 246, 0.3);
+    transition: box-shadow 0.3s ease;
 }
 
-.logobouton:hover {
-    transition-duration: 0.5s;
-    
+#logo:hover {
+    box-shadow: 0 4px 16px rgba(139, 92, 246, 0.5);
 }
 
 .logobouton {
-    height : 100%;
+    height: 100%;
     border-radius: 10px;
     z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.logobouton:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
 }
 
 #search-button {
-    height : 50%;
+    height: 50%;
     border-radius: 10px;
     cursor: pointer;
     align-self: center;
     z-index: 999;
+    background: rgba(139, 92, 246, 0.2);
+    border: 1px solid rgba(139, 92, 246, 0.4);
+    transition: all 0.3s ease;
+    padding: 0.5rem;
+}
+
+#search-button:hover {
+    background: rgba(139, 92, 246, 0.4);
+    transform: translateY(-2px);
 }
 
 #site-search {
-    height : 50%;
+    height: 50%;
     width: 20vw;
     border-radius: 10px;
     align-self: center;
+    background: rgba(41, 41, 41, 0.8);
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    color: #f9f5ee;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
 }
 
-.barrenavacceuil:hover {
-    transition-duration: 0.5s;
-    color: rgb(161, 78, 78);
+#site-search:focus {
+    outline: none;
+    border-color: rgba(139, 92, 246, 0.6);
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
 }
 
 .barrenavacceuil {
-    transition: color 0.5s;
     text-decoration: none;
     color: rgb(237, 143, 143);
     align-self: center;
     z-index: 300;
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
 }
 
-nav {
-    margin-left : 2vw;
+.barrenavacceuil:hover {
+    color: rgb(255, 180, 180);
+    background: rgba(161, 78, 78, 0.1);
+    transform: translateY(-2px);
+}
+
+nav, .help {
+    margin-left: 2vw;
     display: flex;
     align-self: center;
-    height : 50%;
+    height: 50%;
     width: 25vw;
     border-radius: 10px;
     border-width: 3px;
     justify-content: space-evenly;
-    z-index : 200;
-}
-
-.help {
-    margin-left : 2vw;
-    display: flex;
-    align-self: center;
-    height : 50%;
-    width: 25vw;
-    border-radius: 10px;
-    border-width: 3px;
-    justify-content: space-evenly;
-    z-index : 200;
+    z-index: 200;
 }
 
 hr {
     border: 0;
     height: 1px;
-    background: #333;
-    background-image: linear-gradient(to right, #000000, #4e4c4c, #000000);
+    background: linear-gradient(to right, 
+        transparent, 
+        rgba(139, 92, 246, 0.5), 
+        transparent);
+    margin: 1rem 0;
 }
 
 .lienacceuil {
-    transition: color 0.5s;
     text-decoration: none;
     color: rgb(237, 143, 143);
     align-self: center;
     z-index: 300;
     margin-left: 1vw;
+    transition: all 0.3s ease;
+    padding: 0.5rem;
+    border-radius: 8px;
 }
 
 .lienacceuil:hover {
-    transition-duration: 0.5s;
-    color: rgb(161, 78, 78);
+    color: rgb(255, 180, 180);
+    background: rgba(161, 78, 78, 0.1);
 }
 
 .lien-gauche {
@@ -136,4 +169,55 @@ hr {
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
+}
+/* Footer pour la pagination */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    background: linear-gradient(0deg, 
+        rgba(0, 0, 0, 0.95) 0%, 
+        rgba(15, 13, 13, 0.9) 100%);
+    border-top: 2px solid rgba(139, 92, 246, 0.3);
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.5);
+    z-index: 90;
+}
+
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+}
+
+.pagination-btn, .pagination-link {
+    padding: 0.75rem 1.25rem;
+    background: rgba(100, 98, 98, 0.5);
+    color: rgb(237, 143, 143);
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(139, 92, 246, 0.3);
+}
+
+.pagination-btn:hover, .pagination-link:hover {
+    background: rgba(139, 92, 246, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+}
+
+.pagination-current {
+    padding: 0.75rem 1.25rem;
+    background: rgb(139, 92, 246);
+    color: white;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+/* Ajoute du padding au main pour pas que le contenu 
+   soit caché par le footer */
+main {
+    padding-bottom: 6rem;
 }
